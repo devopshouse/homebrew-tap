@@ -3,7 +3,7 @@ cask "tmswitch" do
   name "tmswitch"
   desc "Switch between different versions of Terramate"
   homepage "https://github.com/devopshouse/tmswitch"
-  version "0.1.1"
+  version "0.1.2"
 
   livecheck do
     skip "Auto-generated on release."
@@ -15,12 +15,12 @@ cask "tmswitch" do
     on_intel do
       url "https://github.com/devopshouse/tmswitch/releases/download/v#{version}/tmswitch_#{version}_darwin_x86_64.tar.gz",
         verified: "github.com/devopshouse/tmswitch/"
-      sha256 "8cf7bd5f98087cd8bd41409151ac33628d1eb68327ad139d257a9a7ae59f19d3"
+      sha256 "a4576fd567bde6417e2e61c155a9f636ab13cb33fc55c195a4214614172b2551"
     end
     on_arm do
       url "https://github.com/devopshouse/tmswitch/releases/download/v#{version}/tmswitch_#{version}_darwin_arm64.tar.gz",
         verified: "github.com/devopshouse/tmswitch/"
-      sha256 "5b0daebac446d726c632b9fbc1a7eb48945aa87a5b1ebaf9a941d360b5266f54"
+      sha256 "d15438ce8f8f1cc4a5ae7d105b3833e56bf3860ef1a56516778ead04bdb91f4b"
     end
   end
 
