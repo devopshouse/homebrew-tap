@@ -5,13 +5,11 @@ cask "tmswitch" do
   on_macos do
     on_arm do
       sha256 "9ca46181e1db3b7675f4d96d4a62b8d16056165a2ea2e308117624c0dc7f14c1"
-      url "https://github.com/devopshouse/tmswitch/releases/download/v#{version}/tmswitch_#{version}_darwin_arm64.tar.gz",
-        verified: "github.com/devopshouse/tmswitch/"
+      url "https://github.com/devopshouse/tmswitch/releases/download/v#{version}/tmswitch_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
       sha256 "41d88704f0d80a930f07c870cb77b4aa3512a616f85449da48a58973ee4e5304"
-      url "https://github.com/devopshouse/tmswitch/releases/download/v#{version}/tmswitch_#{version}_darwin_x86_64.tar.gz",
-        verified: "github.com/devopshouse/tmswitch/"
+      url "https://github.com/devopshouse/tmswitch/releases/download/v#{version}/tmswitch_#{version}_darwin_x86_64.tar.gz"
     end
   end
 
@@ -25,9 +23,9 @@ cask "tmswitch" do
 
   binary "tmswitch"
 
-  postflight do
-    if OS.mac?
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/tmswitch"]
+  postflight_steps do
+    on_macos do
+      run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/tmswitch"]
     end
   end
 
